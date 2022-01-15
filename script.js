@@ -6,7 +6,7 @@ const especiePersonagem = document.querySelector('#especie');
 const condicaoPersonagem = document.querySelector('#vivooumorto');
 
 gerarValorAleatorio = () => {
-    return Math.floor((Math.random() + 0.7) * 2);
+    return Math.ceil(Math.random() * 3);
         
 }
 
@@ -14,21 +14,14 @@ gerarValorAleatorio = () => {
 
 puxarPersonagem = () => {
     let numeroAleatorio = gerarValorAleatorio();
-    /*if (numeroAleatorio <= 0.33) {
-        var numerim = 1;
-    } elseif (numeroAleatorio <= 0.66) {
-        var numerim = 2;
+   
+   if (numeroAleatorio == 1) {
+        var alttxt = "é o rick";
+    } else if (numeroAleatorio == 2) {
+        var alttxt = "é o morty";
     } else {
-        var numerim = 3;
-    }
-
-    if (numerim == 1) {
-        var alttxt = 'é o rick';
-    } elseif (numerim == 2) {
-        var alttxt = 'é o morty';
-    } else {
-        var alttxt = 'é a mulher';
-    } */
+        var alttxt = "é a mulher";
+    } 
         
     return fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio}`, {
         method: 'GET',
@@ -38,9 +31,9 @@ puxarPersonagem = () => {
         }
     }).then((response) => response.json()).then((data) => {
         imagem.src = data.image; 
-        imagem.alt = 'teste';        
-        botao.innerHTML = "conhecer o próximo Personagem > >";
-        nomePersonagem.innerHTML = numeroAleatorio;
+        imagem.alt = alttxt;        
+        botao.innerHTML = "Conheça mais personagens >> ";
+        nomePersonagem.innerHTML = data.name;
         especiePersonagem.innerHTML = data.species;
         condicaoPersonagem.innerHTML = data.status;
     })
