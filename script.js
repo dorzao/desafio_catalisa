@@ -39,4 +39,10 @@ puxarPersonagem = () => {
     })
 }
 
-botao.onclick = puxarPersonagem; 
+mostrarLista = () => {
+    var x = document.getElementById("listinha");
+    x.style.display = "block";
+    /*document.setElementById("listinha").style.display="block"*/
+}
+
+botao.onclick = /*puxarPersonagem*/ mostrarLista; 
