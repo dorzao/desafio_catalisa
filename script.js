@@ -41,8 +41,12 @@ puxarPersonagem = () => {
 
 mostrarLista = () => {
     var x = document.getElementById("listinha");
-    x.style.display = "block";
-    /*document.setElementById("listinha").style.display="block"*/
+    x.style.display = "block";    
 }
 
-botao.onclick = /*puxarPersonagem*/ mostrarLista; 
+function fazerMagica() {
+    mostrarLista();
+    puxarPersonagem();
+}
+
+botao.onclick = fazerMagica;
