@@ -16,11 +16,11 @@ puxarPersonagem = () => {
     let numeroAleatorio = gerarValorAleatorio();
    
    if (numeroAleatorio == 1) {
-        var alttxt = "Na imagem está Rick, com olhos serrados com expressão de descontentamento. Ele é um homem de pele branca, cabelos grisalhos e espetados, veste um jaleco e ao fundo é possível notar um quadro com uma casa desenhada.";
+        var alttxt = "Na imagem está Rick, com olhos serrados com expressão de descontentamento/sarcasmo. Ele é um homem de pele cinza, tem o cabelo azul claro espetado, veste um jaleco e ao fundo é possível notar um quadro com uma casa desenhada.";
     } else if (numeroAleatorio == 2) {
-        var alttxt = "Está Mórty, com uma expressão triste. Ele é um menino de pele branca, cabelo marrom, blusa de frio amarela. Ao fundo é possível notar paredes em colorações claras.";
+        var alttxt = "Na foto está Mórty, com uma expressão triste (com medo/angustiado). Ele é um menino de pele branca, cabelo marrom, blusa de manga curta amarela. Ao fundo é possível notar paredes em colorações claras.";
     } else {
-        var alttxt = "Na foto está Summer, de braços cruzados e com um olhar de lado. ela tem a pele branca, cabelos laranjados, batom vermelho, e usa uma blusinha de alsa rosa. Ao fundo é possível notar uma geladeira, paredes verdes e um forro de teto em uma coloração salmão.";
+        var alttxt = "Na foto está Summer, de braços cruzados e com um olhar de lado que pode indicar alguma preocupação. ela tem a pele branca, cabelos laranjados, batom vermelho, e usa uma blusinha de alsa rosa. Ao fundo é possível notar uma geladeira, paredes verdes e um forro de teto em uma coloração salmão.";
     } 
         
     return fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio}`, {
@@ -53,7 +53,8 @@ mostrarLista = () => {
     y.style.height = "400px";
     var z = document.getElementById('botao');
     z.style.height = '44px';
-    z.style.fontSize = '32px';
+    z.style.fontSize = '29px';
+    z.style.width = '400px';
 
 }
 

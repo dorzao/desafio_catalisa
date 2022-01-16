@@ -37,7 +37,7 @@ button {
 }
 
 img {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: 10px;
     border-color: white;
     border-radius: 20px;
@@ -45,9 +45,12 @@ img {
     height: 265;    
 }
 
+section {
+    width: 500px;
+}
 
 li {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     font-size: 27px;
 }
 
