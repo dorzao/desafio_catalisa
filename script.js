@@ -47,7 +47,14 @@ puxarPersonagem = () => {
 
 mostrarLista = () => {
     var x = document.getElementById("listinha");
-    x.style.display = "block";    
+    x.style.display = "block";
+    var y = document.getElementById('imaginha');
+    y.style.width = "420px";
+    y.style.height = "400px";
+    var z = document.getElementById('botao');
+    z.style.height = '44px';
+    z.style.fontSize = '32px';
+
 }
 
 function fazerMagica() {
