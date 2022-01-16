@@ -3,7 +3,7 @@ const botao = document.querySelector('button');
 const lista = document.querySelector('#listinha');
 const nomePersonagem = document.querySelector('#nome');
 const especiePersonagem = document.querySelector('#especie');
-const condicaoPersonagem = document.querySelector('#vivooumorto');
+const condicaoGenero = document.querySelector('#genero');
 
 gerarValorAleatorio = () => {
     return Math.ceil(Math.random() * 3);
@@ -34,8 +34,14 @@ puxarPersonagem = () => {
         imagem.alt = alttxt;        
         botao.innerHTML = "Conheça mais personagens >> ";
         nomePersonagem.innerHTML = data.name;        
-        if (data.species == 'Human') {especiePersonagem.innerHTML = 'Humano'}
-        if (data.status == 'Alive') {condicaoPersonagem.innerHTML = 'Vivo'}
+        if (data.species == 'Human') {especiePersonagem.innerHTML = 'Humana'}
+       if (data.status == 'Alive' && data.gender == 'Male') {
+           condicaoGenero.innerHTML = 'Ele está? Vivo'
+       } else if (data.status == 'Alive' && data.gender == 'Female') {
+           condicaoGenero.innerHTML = 'Ela está? Viva'
+       }
+          
+      
     })
 }
 
