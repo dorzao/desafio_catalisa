@@ -16,11 +16,11 @@ puxarPersonagem = () => {
     let numeroAleatorio = gerarValorAleatorio();
    
    if (numeroAleatorio == 1) {
-        var alttxt = "é o rick";
+        var alttxt = "Na imagem está Rick, com olhos serrados com expressão de descontentamento. Ele é um homem de pele branca, cabelos grisalhos e espetados, veste um jaleco e ao fundo é possível notar um quadro com uma casa desenhada.";
     } else if (numeroAleatorio == 2) {
-        var alttxt = "é o morty";
+        var alttxt = "Está Mórty, com uma expressão triste. Ele é um menino de pele branca, cabelo marrom, blusa de frio amarela. Ao fundo é possível notar paredes em colorações claras.";
     } else {
-        var alttxt = "é a mulher";
+        var alttxt = "Na foto está Summer, de braços cruzados e com um olhar de lado. ela tem a pele branca, cabelos laranjados, batom vermelho, e usa uma blusinha de alsa rosa. Ao fundo é possível notar uma geladeira, paredes verdes e um forro de teto em uma coloração salmão.";
     } 
         
     return fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio}`, {
@@ -33,9 +33,9 @@ puxarPersonagem = () => {
         imagem.src = data.image; 
         imagem.alt = alttxt;        
         botao.innerHTML = "Conheça mais personagens >> ";
-        nomePersonagem.innerHTML = data.name;
-        especiePersonagem.innerHTML = data.species;
-        condicaoPersonagem.innerHTML = data.status;
+        nomePersonagem.innerHTML = data.name;        
+        if (data.species == 'Human') {especiePersonagem.innerHTML = 'Humano'}
+        if (data.status == 'Alive') {condicaoPersonagem.innerHTML = 'Vivo'}
     })
 }
 
